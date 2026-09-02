@@ -1,8 +1,8 @@
 # Hangman
 
-![Java CI with Gradle](https://github.com/CST-338/hw01-hangman/actions/workflows/gradle.yml/badge.svg?branch=main)
+![Java CI with Gradle](https://github.com/cst338-fa26/hw01-hangman-sanchez-lopez-eduardo-itsjusteddie/actions/workflows/gradle.yml/badge.svg?branch=main)
 
-> Requires **JDK 25**. CI (GitHub Actions) builds and runs the tests with Gradle on every push — check the badge above or the [Actions tab](https://github.com/CST-338/hw01-hangman/actions) for current status.
+> Requires **JDK 25**. CI (GitHub Actions) builds and runs the tests with Gradle on every push — check the badge above for current status.
 
 ## Getting Started
 
@@ -48,11 +48,11 @@ This assignment will also use the following keywords:
 - `private`
 - `final`
 
-### [StringBuilder](https://www.javatpoint.com/StringBuilder-class)
+### [StringBuilder](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/StringBuilder.html)
 
 StringBuilder is used throughout the project to create and update Strings. Unlike the built-in String class, String builder is not immutable. Because Java Strings are immutable it is discouraged to use them in loops as each iteration of the loop requires a new String to be created and new memory to be allocated. Additionally the old String must then be garbage collected.
 
-### [List\<\>](https://www.javatpoint.com/java-list)
+### [List\<\>](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/List.html)
 
 List\<\> is a generic container in Java. A List\<\> has several methods that are used in this assignment. In the completed solution the following List\<\> methods were used:
 
@@ -83,7 +83,7 @@ List\<\> is a generic container in Java. A List\<\> has several methods that are
 - `hintTest`
 - `checkPlay`
 
-Current pass/fail status for all of them is always visible in the CI badge at the top of this page and in the [Actions tab](https://github.com/CST-338/hw01-hangman/actions) — no need for a static screenshot that would just go stale.
+Current pass/fail status for all of them is always visible in the CI badge at the top of this page — no need for a static screenshot that would just go stale.
 
 ### Expected Output
 
@@ -279,7 +279,7 @@ BUILD SUCCESSFUL in 393ms
 - `gameLoaderTest`
 - `gameWinTest`
 
-Current pass/fail status is always visible in the CI badge at the top of this page and in the [Actions tab](https://github.com/CST-338/hw01-hangman/actions).
+Current pass/fail status is always visible in the CI badge at the top of this page.
 
 ### Expected Output
 

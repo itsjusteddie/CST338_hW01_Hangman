@@ -286,7 +286,9 @@ public class Hangman {
      */
     public int getCountWordsRemaining() {
         //todo: make getCountWordsRemaining follow java dock
-        return -42;
+
+        return allWords.size() - guessedWords.size();
+
     }
 
     /**
@@ -297,6 +299,10 @@ public class Hangman {
      */
     public boolean hasWon() {
         //todo: make hasWon follow JavaDoc
+        if(!guessedWord.toString().contains(PLACEHOLDER)){
+          return true;
+        }
+
         return false;
     }
 

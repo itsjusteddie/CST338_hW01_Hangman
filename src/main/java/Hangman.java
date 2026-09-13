@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -229,8 +230,15 @@ public class Hangman {
      */
     public int exit() {
         //todo: make exit follow JavaDoc
-        System.out.println("Exit not working!");
-        return -42;
+      remainingGuesses = 0;
+      System.out.println("Thanks for playing! ");
+      if(hasWon()){
+      return getScore();
+
+      }
+
+
+        return 0;
     }
 
     /**

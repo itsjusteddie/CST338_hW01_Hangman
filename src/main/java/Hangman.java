@@ -376,7 +376,34 @@ public class Hangman {
      */
     public boolean makeGuess(char letter) {
 //todo: make makeGuess  follow JavaDoc
+      letter = Character.toUpperCase(letter);
+
+      if (guessedLetters.contains(letter)) {
+        System.out.println(letter + " has already been guessed");
         return false;
+      }
+
+      System.out.println("You chose: " + letter);
+      guessedLetters.add(letter);
+
+      boolean found = false;
+
+      for (int i = 0; i < secretWord.length(); i++) {
+        if (secretWord.charAt(i) == letter) {
+          guessedWord.setCharAt(i, letter);
+          score++;
+          found = true;
+        }
+      }
+
+      if (!found) {
+        remainingGuesses--;
+        System.out.println(letter + " was not present!");
+        return false;
+      }
+
+      System.out.println(letter + " was present!");
+      return true;
     }
 
   /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

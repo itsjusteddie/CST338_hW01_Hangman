@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
-
-
+import java.util.Random;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 /**
  *
  *<br>
@@ -9,8 +11,8 @@ import java.util.List;
  * <br>
  * It requires GameLoader.java to run.
  * <br>
- *  @author [FILL THIS IN] 
- *  @since [PUT THE DATE YOU STARTED WORKING ON THIS]
+ *  @author Eduardo Sanchez-Lopez
+ *  @since 9/11/26
  */
 
 public class Hangman {
@@ -23,6 +25,7 @@ public class Hangman {
    * this is the word the user is trying to guess
    */
   private String secretWord;
+
 
   /**<ul>
    *    <li> the placeholder for the word that is being guessed.  This will initially be populated with the
@@ -100,7 +103,30 @@ public class Hangman {
    */
   public String chooseWord() {
     //TODO: Make chooseWord function
-    return "NOT WORKING";
+    Random random = new Random();
+
+    //generates random num starting at 0 for chosing a random word within allWords
+    String word = allWords.get(random.nextInt(allWords.size()));
+
+    //Checks if chosen word has been used and loops until a fresh word is chosen
+    while (guessedWords.contains(word)){
+      word = allWords.get(random.nextInt(allWords.size()));
+
+    }
+    secretWord = word;
+    guessedWords.add(word);
+    remainingGuesses = secretWord.length() -1;
+    numberOfHints = Math.floorDiv(remainingGuesses, 2);
+    guessedLetters = new ArrayList<>();
+    guessedWord = new StringBuilder(secretWord.length());
+    guessedWord.append(PLACEHOLDER.repeat(secretWord.length()));
+
+    if(debug){
+      System.out.println("Word chosen: " + secretWord);
+    }
+
+
+    return secretWord;
   }
 
   /**
@@ -122,7 +148,17 @@ public class Hangman {
   public boolean readFile(String fileToLoad){
     //TODO: make readFile work
     System.out.println("read file not implemented");
+
+
+
+
+
     return false;
+
+
+
+
+
   }
 
   /**

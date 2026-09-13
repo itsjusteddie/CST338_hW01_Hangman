@@ -313,6 +313,9 @@ public class Hangman {
      */
     public boolean hasLost() {
         //todo: make hasLost follow JavaDoc
+      if(remainingGuesses == 0){
+        return true;
+      }
         return false;
     }
 

@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- *
  * <br>
  * This object represents a game of Hangman.
  * <br>

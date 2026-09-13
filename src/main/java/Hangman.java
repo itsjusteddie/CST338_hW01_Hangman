@@ -285,9 +285,9 @@ public class Hangman {
      * @return the difference of {@code allWords.size()} and {@code guessedWords().size()}
      */
     public int getCountWordsRemaining() {
-        //todo: make getCountWordsRemaining follow java dock
+      //todo: make getCountWordsRemaining follow java dock
 
-        return allWords.size() - guessedWords.size();
+      return allWords.size() - guessedWords.size();
 
     }
 
@@ -298,12 +298,12 @@ public class Hangman {
      * {@link Hangman#guessedWord} otherwise {@code false}
      */
     public boolean hasWon() {
-        //todo: make hasWon follow JavaDoc
-        if(!guessedWord.toString().contains(PLACEHOLDER)){
-          return true;
-        }
+      //todo: make hasWon follow JavaDoc
+      if (!guessedWord.toString().contains(PLACEHOLDER)) {
+        return true;
+      }
 
-        return false;
+      return false;
     }
 
     /**
@@ -312,11 +312,11 @@ public class Hangman {
      * @return {@code true} if {@link Hangman#remainingGuesses} == 0. Otherwise {@code false}
      */
     public boolean hasLost() {
-        //todo: make hasLost follow JavaDoc
-      if(remainingGuesses == 0){
+      //todo: make hasLost follow JavaDoc
+      if (remainingGuesses == 0) {
         return true;
       }
-        return false;
+      return false;
     }
 
     /**
@@ -325,8 +325,11 @@ public class Hangman {
      * @return {@code true} if the results either {@link Hangman#hasWon()} or {@link Hangman#hasLost()} is true. Otherwise {@code false}
      */
     public boolean isGameOver() {
-        //todo: make isGameOver follow JavaDoc
-        return false;
+      //todo: make isGameOver follow JavaDoc
+      if (hasWon() || hasLost()) {
+        return true;
+      }
+      return false;
     }
 
     /**
@@ -336,7 +339,8 @@ public class Hangman {
      */
     public int getScore() {
         //todo: make getScore follow JavaDoc
-        return -42;
+
+        return remainingGuesses + score;
     }
 
     /**

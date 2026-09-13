@@ -257,9 +257,26 @@ public class Hangman {
      *
      */
     public int getHint() {
-        //todo: make getHint follow JavaDoc
+      //todo: make getHint follow JavaDoc
+      if (numberOfHints <= 0) {
+        System.out.println("You've run out of hints!");
+        return numberOfHints;
+      }
+      int i = 0;
+      while (i < secretWord.length()) {
+        char letter = secretWord.charAt(i);
+        if (!guessedLetters.contains(letter)) {
+          makeGuess(letter);
+          numberOfHints--;
+          return numberOfHints;
+        }
 
-        return -42;
+
+        i++;
+      }
+
+
+      return numberOfHints;
     }
 
     /**
